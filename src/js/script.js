@@ -34,8 +34,8 @@ $(document).ready(function () {
         .addClass("catalog__content_active");
     }
   );
-  // buttons next&prev in catalog item
 
+  // buttons next&prev in catalog item
   function toggleSlide(item) {
     $(item).each(function (i) {
       $(this).on("click", function (e) {
@@ -49,4 +49,25 @@ $(document).ready(function () {
   }
   toggleSlide(".catalog-item__link");
   toggleSlide(".catalog-item__back");
+
+  // Modal windows
+  $("[data-modal=consultation]").on("click", function () {
+    $(".overlay, #consultation").fadeIn("slow");
+  });
+  $(".modal__close").on("click", function () {
+    $(".overlay, #consultation, #order, #success").fadeOut("slow");
+  });
+
+  $(".button_mini").each(function (i) {
+    $(this).on("click", function () {
+      $("#order .modal__subtitle").text(
+        $(".catalog-item__subtitle").eq(i).text()
+      );
+      $(".overlay, #order").fadeIn("slow");
+    });
+  });
+  // $(".button_submit").on("click", function () {
+  //   $("#consultation, #order").fadeOut();
+  //   $("#success").fadeIn();
+  // });
 });

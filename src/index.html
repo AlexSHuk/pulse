@@ -24,7 +24,9 @@
             <a class="header__phone" href="tel:+380999997777"
               >+38 (099) 999 77 77</a
             >
-            <button class="button">Заказать звонок</button>
+            <button class="button" data-modal="consultation">
+              Заказать звонок
+            </button>
           </div>
         </header>
         <div class="promo__wrapper">
@@ -44,7 +46,9 @@
               Ответим на все вопросы
             </div>
           </div>
-          <button class="button button_main">заказать консультацию</button>
+          <button class="button button_main" data-modal="consultation">
+            заказать консультацию
+          </button>
           <div class="promo__link">или <a href="#">перейти в каталог</a></div>
         </div>
       </div>
@@ -630,6 +634,68 @@
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="footer__info">
+        <address class="footer__addr">Майдан Независимости 1, Киев</address>
+        <a href="tel:+380999997777" class="footer__phone"
+          >+38 (099) 999 77 77</a
+        >
+        <div class="footer__social">
+          <a href="#" class="footer__social-item"
+            ><img src="icons/social/facebook.png" alt="facebook" /></a
+          ><a href="#" class="footer__social-item"
+            ><img src="icons/social/instagram.png" alt="instagram" /></a
+          ><a href="#" class="footer__social-item"
+            ><img src="icons/social/pinterest.png" alt="pinterest"
+          /></a>
+        </div>
+      </div>
+      <div class="footer__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.478695850251!2d30.520144211733516!3d50.45081006680151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce505f2c2b6f%3A0x3c708bc302925049!2z0KLQpiDQk9C70L7QsdGD0YEtMQ!5e0!3m2!1sru!2sua!4v1665085680131!5m2!1sru!2sua"
+          width="100%"
+          height="630"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </footer>
+    <!-- modal windos -->
+    <div class="overlay">
+      <div class="modal" id="consultation">
+        <div class="modal__close">&times;</div>
+        <div class="modal__title">Просто заполните форму заявки</div>
+        <div class="modal__subtitle">
+          и мы перезвоним Вам в течении 10 минут
+        </div>
+        <form class="feed-form" action="#">
+          <input name="name" required type="text" placeholder="Ваше имя" />
+          <input name="phone" required type="tel" placeholder="Ваш телефон" />
+          <input name="email" required type="email" placeholder="Ваш E-mail" />
+          <button class="button button_submit">заказать консультацию</button>
+        </form>
+      </div>
+      <div class="modal" id="order">
+        <div class="modal__close">&times;</div>
+        <div class="modal__title">Ваш заказ</div>
+        <div class="modal__subtitle"></div>
+        <form class="feed-form" action="#">
+          <input name="name" required type="text" placeholder="Ваше имя" />
+          <input name="phone" required type="tel" placeholder="Ваш телефон" />
+          <input name="email" required type="email" placeholder="Ваш E-mail" />
+          <button class="button button_submit">купить</button>
+        </form>
+      </div>
+      <div class="modal modal_mini" id="success">
+        <div class="modal__close">&times;</div>
+        <div class="modal__title">Спасибо за Вашу заявку!</div>
+        <div class="modal__subtitle">
+          Наш менеджер свяжется с Вами в ближайшее время!
+        </div>
+      </div>
+    </div>
     <script
       type="text/javascript"
       src="//code.jquery.com/jquery-1.11.0.min.js"
