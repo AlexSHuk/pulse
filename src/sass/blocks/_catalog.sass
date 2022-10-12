@@ -113,13 +113,13 @@
             &_active
                 transform: translateX(-100%)
                 margin-left: 0px
-            li 
+            li:not(:last-child) 
                 color: #555
                 font-size: 14px
                 font-weight: 300
                 margin-bottom: 20px
                 position: relative
-                &::before
+                &:not(:last-child)::before
                     content: ''
                     position: absolute
                     width: 5px
