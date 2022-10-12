@@ -3,9 +3,9 @@ $(document).ready(function () {
   $(".carousel__inner").slick({
     speed: 1200,
     prevArrow:
-      '<button type="button" class="slick-prev"> <img src="../icons/slider_arrow/prev_arrow.png">    </button>',
+      '<button type="button" class="slick-prev"> <img src="icons/slider_arrow/prev_arrow.png">    </button>',
     nextArrow:
-      '<button type="button" class="slick-next"><img src="../icons/slider_arrow/next_arrow.png"></button>',
+      '<button type="button" class="slick-next"><img src="icons/slider_arrow/next_arrow.png"></button>',
     responsive: [
       {
         breakpoint: 768,
@@ -66,8 +66,72 @@ $(document).ready(function () {
       $(".overlay, #order").fadeIn("slow");
     });
   });
-  // $(".button_submit").on("click", function () {
-  //   $("#consultation, #order").fadeOut();
-  //   $("#success").fadeIn();
-  // });
+  // Validation form input
+  function validateForms(form){
+    $(form).validate({
+      rules: {
+        name:'required',
+        phone: 'required',
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages:{
+        name: 'Введите имя',
+        phone: 'Введите номер телефона',
+        email:{
+          required:'Введите адрес эл. почты ',
+          email:'Неверно введен адрес почты'
+        }
+      }
+    });
+  }
+  validateForms('#consultation-form');
+  validateForms('#order form');
+  validateForms('#consultation form');
+// input mask
+$('input[name=phone]').mask("+38 (999) 999-99-99");
+// smooth scroll & pageUp
+$(window).scroll(function(){
+  if ($(this).scrollTop() >1600) {
+    $('.pageup').fadeIn();
+  } else {
+    $('.pageup').fadeOut();
+  }
+})
+$("a[href^='#']").click(function(){
+  const _href = $(this).attr('href');
+  $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+  return false;
+})
+// send data from input to server
+$('form').submit(function(e){
+  e.preventDefault();
+
+  if (!$(this).valid()){
+    return;
+  }
+
+  //"try ... catch" construct , add a valid recipient
+try{
+  $.ajax({
+  type: "POST",
+  url:"../mailer/smart.php",
+  data: $(this).serialize()
+}).done(function(){
+  $(this).find("input").val("");
+  $('#consultation, #order').fadeOut();
+  $('.overlay, #success').fadeIn('slow');
+
+  $('form').trigger('reset');
+});
+} catch(e){
+}  
+$(this).find("input").val("");
+$('#consultation, #order').fadeOut();
+$('.overlay, #success').fadeIn('slow');
+$('form').trigger('reset');
+  return false; 
+})
 });

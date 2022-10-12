@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
-    <section class="promo">
+    <section class="promo" id="up">
       <div class="container">
         <header class="header">
           <a href="#" class="header__logo"
@@ -58,7 +58,7 @@
         <div class="benefits__title">наши преимущества</div>
         <div class="benefits__items">
           <div class="benefits__item">
-            <img src="../icons/plus/cup.png" alt="cup" />
+            <img src="icons/plus/cup.png" alt="cup" />
             <div class="benefits__subtitle">Делимся опытом</div>
             <div class="benefits__descr">
               Наши сотрудники всегда готовы поделиться своим опытом, так как
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="benefits__item">
-            <img src="../icons/plus/heart.png" alt="heart" />
+            <img src="icons/plus/heart.png" alt="heart" />
             <div class="benefits__subtitle">Заботимся о здоровье</div>
             <div class="benefits__descr">
               Мы работаем для того, чтобы Ваши занятия спортом шли на пользу
@@ -75,7 +75,7 @@
             </div>
           </div>
           <div class="benefits__item">
-            <img src="../icons/plus/shoe.png" alt="shoes" />
+            <img src="icons/plus/shoe.png" alt="shoes" />
             <div class="benefits__subtitle">Учим бегать</div>
             <div class="benefits__descr">
               Помогаем с обучением правильной технике бега! Дружим с крупнейшей
@@ -95,7 +95,7 @@
           Просто заполните форму заявки <br />
           и мы перезвоним вам в течении 10 минут
         </div>
-        <form class="feed-form" action="#">
+        <form class="feed-form" id="consultation-form" action="#">
           <input name="name" required type="text" placeholder="Ваше имя" />
           <input name="phone" required type="tel" placeholder="Ваш телефон" />
           <input name="email" required type="email" placeholder="Ваш E-mail" />
@@ -573,7 +573,7 @@
           <div class="reviews-item">
             <img
               class="reviews-item__photo"
-              src="../img/reviews/review_1.png"
+              src="img/reviews/review_1.png"
               alt=""
             />
             <div class="reviews-item__descr">
@@ -592,7 +592,7 @@
           <div class="reviews-item">
             <img
               class="reviews-item__photo"
-              src="../img/reviews/review_2.png"
+              src="img/reviews/review_2.png"
               alt=""
             />
             <div class="reviews-item__descr">
@@ -611,7 +611,7 @@
           <div class="reviews-item">
             <img
               class="reviews-item__photo"
-              src="../img/reviews/review_3.png"
+              src="img/reviews/review_3.png"
               alt=""
             />
             <div class="reviews-item__descr">
@@ -671,9 +671,9 @@
           и мы перезвоним Вам в течении 10 минут
         </div>
         <form class="feed-form" action="#">
-          <input name="name" required type="text" placeholder="Ваше имя" />
-          <input name="phone" required type="tel" placeholder="Ваш телефон" />
-          <input name="email" required type="email" placeholder="Ваш E-mail" />
+          <input name="name"  type="text" placeholder="Ваше имя" />
+          <input name="phone"  type="tel" placeholder="Ваш телефон" />
+          <input name="email"  type="email" placeholder="Ваш E-mail" />
           <button class="button button_submit">заказать консультацию</button>
         </form>
       </div>
@@ -682,9 +682,9 @@
         <div class="modal__title">Ваш заказ</div>
         <div class="modal__subtitle"></div>
         <form class="feed-form" action="#">
-          <input name="name" required type="text" placeholder="Ваше имя" />
-          <input name="phone" required type="tel" placeholder="Ваш телефон" />
-          <input name="email" required type="email" placeholder="Ваш E-mail" />
+          <input name="name"  type="text" placeholder="Ваше имя" />
+          <input name="phone"  type="tel" placeholder="Ваш телефон" />
+          <input name="email"  type="email" placeholder="Ваш E-mail" />
           <button class="button button_submit">купить</button>
         </form>
       </div>
@@ -696,7 +696,12 @@
         </div>
       </div>
     </div>
-    <script
+
+    <a href="#up" class="pageup">    
+      <img src="icons/circle-up.svg" alt="up">
+    </a>
+    
+    <script 
       type="text/javascript"
       src="//code.jquery.com/jquery-1.11.0.min.js"
     ></script>
@@ -705,6 +710,8 @@
       src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
     ></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
